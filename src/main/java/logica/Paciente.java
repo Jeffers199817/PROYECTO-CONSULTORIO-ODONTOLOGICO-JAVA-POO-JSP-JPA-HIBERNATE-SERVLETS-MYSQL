@@ -8,6 +8,6 @@ package logica;
  *
  * @author JEFFERSON ALQUINGA
  */
-public class Paciente {
+public class Paciente extends Persona{
     
 }
