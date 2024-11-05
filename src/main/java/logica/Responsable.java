@@ -9,5 +9,6 @@ package logica;
  * @author JEFFERSON ALQUINGA
  */
 public class Responsable extends Persona{
+    private int id_responsable;
     
 }
