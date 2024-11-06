@@ -123,23 +123,6 @@
 									"subViews": [
 										{
 											"_type": "UMLAttributeView",
-											"_id": "AAAAAAGS/Yau3BmLq7A=",
-											"_parent": {
-												"$ref": "AAAAAAGS/X9y9hXW8Mc="
-											},
-											"model": {
-												"$ref": "AAAAAAGS/Yau1BmIjFM="
-											},
-											"font": "Arial;13;0",
-											"left": 533,
-											"top": 158,
-											"width": 151,
-											"height": 13,
-											"text": "-id_persona",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLAttributeView",
 											"_id": "AAAAAAGS/YcJBhmUtH4=",
 											"_parent": {
 												"$ref": "AAAAAAGS/X9y9hXW8Mc="
@@ -149,7 +132,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 533,
-											"top": 173,
+											"top": 158,
 											"width": 151,
 											"height": 13,
 											"text": "-dni",
@@ -166,7 +149,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 533,
-											"top": 188,
+											"top": 173,
 											"width": 151,
 											"height": 13,
 											"text": "-nombre",
@@ -183,7 +166,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 533,
-											"top": 203,
+											"top": 188,
 											"width": 151,
 											"height": 13,
 											"text": "-apellido",
@@ -200,7 +183,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 533,
-											"top": 218,
+											"top": 203,
 											"width": 151,
 											"height": 13,
 											"text": "-telefono",
@@ -217,7 +200,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 533,
-											"top": 233,
+											"top": 218,
 											"width": 151,
 											"height": 13,
 											"text": "-direccion",
@@ -234,7 +217,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 533,
-											"top": 248,
+											"top": 233,
 											"width": 151,
 											"height": 13,
 											"text": "-fecha_nac",
@@ -245,7 +228,7 @@
 									"left": 528,
 									"top": 153,
 									"width": 161,
-									"height": 113
+									"height": 98
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -258,7 +241,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 528,
-									"top": 266,
+									"top": 251,
 									"width": 161,
 									"height": 10
 								},
@@ -3885,15 +3868,6 @@
 					},
 					"name": "Persona",
 					"attributes": [
-						{
-							"_type": "UMLAttribute",
-							"_id": "AAAAAAGS/Yau1BmIjFM=",
-							"_parent": {
-								"$ref": "AAAAAAGS/X9y9RXOFrk="
-							},
-							"name": "id_persona",
-							"visibility": "private"
-						},
 						{
 							"_type": "UMLAttribute",
 							"_id": "AAAAAAGS/YcJAhmRtDM=",
