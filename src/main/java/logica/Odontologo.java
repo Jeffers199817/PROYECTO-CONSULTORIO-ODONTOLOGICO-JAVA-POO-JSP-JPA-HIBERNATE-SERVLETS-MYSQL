@@ -6,17 +6,25 @@ package logica;
 
 import java.util.Date;
 import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 /**
  *
  * @author JEFFERSON ALQUINGA
  */
+
+@Entity
 public class Odontologo extends Persona{
     
-    private int id_odontologo;
+    //private int id_odontologo;
     private String especialidad;
+    @OneToOne
     private Horario unHorario;
+    @OneToMany
     private List<Turno> listaTurnos;
+    @OneToOne(mappedBy="odonto")
     private Usuario unUsuario;
     
     
@@ -24,22 +32,15 @@ public class Odontologo extends Persona{
     public Odontologo() {
     }
 
-    public Odontologo(int id_odontologo, String especialidad, Horario unHorario, List<Turno> listaTurnos, Usuario unUsuario, String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac) {
-        super(dni, nombre, apellido, telefono, direccion, fecha_nac);
-        this.id_odontologo = id_odontologo;
+    public Odontologo(String especialidad, Horario unHorario, List<Turno> listaTurnos, Usuario unUsuario, int id, String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac) {
+        super(id,dni, nombre, apellido, telefono, direccion, fecha_nac);
         this.especialidad = especialidad;
         this.unHorario = unHorario;
         this.listaTurnos = listaTurnos;
         this.unUsuario = unUsuario;
     }
 
-    public int getId_odontologo() {
-        return id_odontologo;
-    }
-
-    public void setId_odontologo(int id_odontologo) {
-        this.id_odontologo = id_odontologo;
-    }
+    
 
     public String getEspecialidad() {
         return especialidad;
