@@ -12,7 +12,7 @@ import java.util.Date;
  */
 public class Persona {
     
-    private int id_persona;
+
     private String dni;
     private String nombre;
     private String apellido;
@@ -23,22 +23,13 @@ public class Persona {
     public Persona() {
     }
 
-    public Persona(int id_persona, String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac) {
-        this.id_persona = id_persona;
+    public Persona(String dni, String nombre, String apellido, String telefono, String direccion, Date fecha_nac) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
         this.direccion = direccion;
         this.fecha_nac = fecha_nac;
-    }
-
-    public int getId_persona() {
-        return id_persona;
-    }
-
-    public void setId_persona(int id_persona) {
-        this.id_persona = id_persona;
     }
 
     public String getDni() {
@@ -90,6 +81,7 @@ public class Persona {
     }
     
     
+
     
     
 }
