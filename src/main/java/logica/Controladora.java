@@ -21,7 +21,8 @@ public class Controladora {
         
         controlPersis.crearUsuario(usu);
         
-        
-    }
+    } 
+    
+ 
     
 }
