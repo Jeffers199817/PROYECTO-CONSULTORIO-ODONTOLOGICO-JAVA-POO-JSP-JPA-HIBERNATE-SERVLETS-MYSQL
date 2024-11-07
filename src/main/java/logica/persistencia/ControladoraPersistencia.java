@@ -4,6 +4,8 @@
  */
 package logica.persistencia;
 
+import logica.Usuario;
+
 /**
  *
  * @author JEFFERSON ALQUINGA
@@ -18,6 +20,11 @@ public class ControladoraPersistencia {
     SecretarioJpaController secretariaJpa = new SecretarioJpaController();
     TurnoJpaController turnoJpa = new TurnoJpaController();
     UsuarioJpaController usuarioJpa = new UsuarioJpaController();
+
+    public void crearUsuario(Usuario usu) {
+        
+        usuarioJpa.create(usu);
+    }
     
     
     
