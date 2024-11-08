@@ -14,11 +14,21 @@ public class Controladora {
     
     ControladoraPersistencia controlPersis  = new ControladoraPersistencia();
     
+    public Controladora(){ 
+        
+        
+    }
     
-    public void crearUsuario(int id , String nombreUsuario, String contrasenia, String rol){
+    
+    public void crearUsuario(String nombre_usuario, String contrasenia, String rol){
         
-        Usuario usu = new Usuario(1, "Jefferson","Jeff1998","admin");
+        System.out.println("llEGAMOS BIEN ");
         
+        Usuario usu  = new Usuario();
+        usu.setNombre_usuario(nombre_usuario);
+        usu.setContrasenia(contrasenia);
+        usu.setRol(rol);
+
         controlPersis.crearUsuario(usu);
         
     } 

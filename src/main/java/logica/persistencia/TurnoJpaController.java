@@ -26,13 +26,11 @@ public class TurnoJpaController implements Serializable {
         this.emf = emf;
     }
     private EntityManagerFactory emf = null;
-    
-    
-    public TurnoJpaController(){ 
-        
-        emf= Persistence.createEntityManagerFactory("ConsultorioOdontologicoPU");
-    }
 
+    
+        public TurnoJpaController (){
+        emf = Persistence.createEntityManagerFactory("ConsultorioOdontologicoPU");
+    }
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
     }

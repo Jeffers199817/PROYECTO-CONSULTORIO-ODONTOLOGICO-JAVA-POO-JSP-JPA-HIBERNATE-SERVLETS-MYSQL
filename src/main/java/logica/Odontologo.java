@@ -23,9 +23,9 @@ public class Odontologo extends Persona implements Serializable{
     private String especialidad;
     @OneToOne
     private Horario unHorario;
-    @OneToMany
+    @OneToMany(mappedBy="odonto")
     private List<Turno> listaTurnos;
-    @OneToOne(mappedBy="odonto")
+    @OneToOne
     private Usuario unUsuario;
     
     

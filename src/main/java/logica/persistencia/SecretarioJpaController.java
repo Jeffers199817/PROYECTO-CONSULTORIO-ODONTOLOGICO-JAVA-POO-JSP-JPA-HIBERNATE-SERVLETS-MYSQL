@@ -27,7 +27,9 @@ public class SecretarioJpaController implements Serializable {
     }
     private EntityManagerFactory emf = null;
     
-    public SecretarioJpaController(){ 
+    
+    
+        public SecretarioJpaController (){
         emf = Persistence.createEntityManagerFactory("ConsultorioOdontologicoPU");
     }
 
