@@ -6,7 +6,6 @@ package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,77 +15,67 @@ import javax.servlet.http.HttpSession;
 import logica.Controladora;
 import logica.Usuario;
 
-@WebServlet(name = "SvUsuarios", urlPatterns = {"/SvUsuarios"})
-public class SvUsuarios extends HttpServlet {
-    
-    
-
+/**
+ *
+ * @author JEFFERSON ALQUINGA
+ */
+@WebServlet(name = "SvEditUsuarios", urlPatterns = {"/SvEditUsuarios"})
+public class SvEditUsuarios extends HttpServlet {
     Controladora control = new Controladora();
-
+    Usuario usu;
+     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
+        response.setContentType("text/html;charset=UTF-8");
+      
+         
+        
     }
-
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        processRequest(request, response);
         
         
-        List<Usuario> listaUsuario = control.listarUsuarios();
-     
         
-        //Traemos la session de los jsp 
+        int id = Integer.parseInt(request.getParameter("id"));
         
+        this.usu = control.traerUsuario(id);
+        
+        //traer la session 
         HttpSession misesion = request.getSession();
         
-        //Asignamos en esta sessión la variable lista de usuario 
-        misesion.setAttribute("listaUsuario", listaUsuario);
-
-        //Redirigimos a nuestro jsp 
+        //seteamos el atributo
         
-        response.sendRedirect("verUsuarios.jsp");
+        misesion.setAttribute("usu", usu);
         
- 
+        //redireciónamos 
         
+        response.sendRedirect("editarUsuario.jsp");
+     
     }
 
-   
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
         
-        
-        String nombre_usuario = request.getParameter("nombreusu");
+        String nombreUsuario = request.getParameter("nombreusu");
         String contrasenia = request.getParameter("contrasenia");
         String rol = request.getParameter("rol");
         
-      
         
-        System.out.println("Nombre usuario: " + nombre_usuario);
-        control.crearUsuario(nombre_usuario, contrasenia, rol);
+        control.editarUsuario(usu,nombreUsuario, contrasenia, rol);
         
+        //Redirecionamos al servel svUsuarios
         
-        response.sendRedirect("index.jsp");
-        
+        response.sendRedirect("SvUsuarios?methos=GET");
         
         
-
     }
 
-   
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     @Override
     public String getServletInfo() {
         return "Short description";

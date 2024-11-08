@@ -6,87 +6,54 @@ package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
+import static java.lang.Integer.parseInt;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import logica.Controladora;
-import logica.Usuario;
 
-@WebServlet(name = "SvUsuarios", urlPatterns = {"/SvUsuarios"})
-public class SvUsuarios extends HttpServlet {
+/**
+ *
+ * @author JEFFERSON ALQUINGA
+ */
+@WebServlet(name = "SvElimUsuarios", urlPatterns = {"/SvElimUsuarios"})
+public class SvElimUsuarios extends HttpServlet {
     
-    
-
     Controladora control = new Controladora();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
+        response.setContentType("text/html;charset=UTF-8");
     }
 
-
+ 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        
-        List<Usuario> listaUsuario = control.listarUsuarios();
-     
-        
-        //Traemos la session de los jsp 
-        
-        HttpSession misesion = request.getSession();
-        
-        //Asignamos en esta sessión la variable lista de usuario 
-        misesion.setAttribute("listaUsuario", listaUsuario);
-
-        //Redirigimos a nuestro jsp 
-        
-        response.sendRedirect("verUsuarios.jsp");
-        
- 
-        
+        processRequest(request, response);
     }
+    
+    
+    
 
-   
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
         
         
-        String nombre_usuario = request.getParameter("nombreusu");
-        String contrasenia = request.getParameter("contrasenia");
-        String rol = request.getParameter("rol");
+        int id = Integer.parseInt(request.getParameter("id"));
         
-      
+        control.eliminarUsuario(id);
         
-        System.out.println("Nombre usuario: " + nombre_usuario);
-        control.crearUsuario(nombre_usuario, contrasenia, rol);
+        response.sendRedirect("SvUsuarios?method=GET");
         
         
-        response.sendRedirect("index.jsp");
-        
-        
-        
-
     }
 
    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     @Override
     public String getServletInfo() {
         return "Short description";
