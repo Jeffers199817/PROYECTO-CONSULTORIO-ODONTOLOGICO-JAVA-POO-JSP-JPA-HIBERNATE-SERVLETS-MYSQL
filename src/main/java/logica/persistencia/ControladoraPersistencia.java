@@ -4,6 +4,7 @@
  */
 package logica.persistencia;
 
+import java.util.List;
 import logica.Usuario;
 
 /**
@@ -29,6 +30,11 @@ public class ControladoraPersistencia {
     public void crearUsuario(Usuario usu) {
         
         usuarioJpa.create(usu);
+    }
+
+    public List<Usuario> listarUsuario() {
+        
+        return usuarioJpa.findUsuarioEntities();
     }
     
     
