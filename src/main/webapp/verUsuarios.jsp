@@ -35,6 +35,7 @@
                                             <th>Id Usuario</th>
                                             <th>Nombre</th>
                                             <th>Rol</th>
+                                            <th>Acción</th>
                                          
                                         </tr>
                                     </thead>
@@ -43,29 +44,53 @@
                                         <tr>
                                             <th>Id Usuario</th>
                                             <th>Nombre</th>
-                                            <th>Rol</th>
+                                            <th>Rol</th>    
+                                            <th>Acción</th>
                                         </tr>
                                     </tfoot>
                                     
                                                                         
                                     <%   List<Usuario> listaUsuario =(List)request.getSession().getAttribute("listaUsuario");
                                     
-                                        for(Usuario usu: listaUsuario){
+                                     
                                     
                                         
                                     %>
                                     <tbody>
+                                        
+                                        <%    for(Usuario usu: listaUsuario){ %>
+                                        
                                         <tr>
-                                            <td><%=usu.getId_usuario()%></td>
+                                            <td id="id_usu=usu.getId_usuario()%>"><%=usu.getId_usuario()%></td>
                                             <td><%=usu.getNombre_usuario()%></td>
                                             <td><%=usu.getRol()%></td>
-                                           
+                                            
+                                            <!-- Acción para eleiminar -->
+                                            <td style="display:grid; grid-template-columns: 1fr 1fr; width:auto " width="100%">
+                                                <form name="eliminar" action="SvElimUsuarios" method="POST">
+                                                    <button type="submit" class ="btn btn-primary btn-user btn-block "; style="background-color:red; margin-right: 5px">
+                                                        <i class ="fas fa-trash-alt"></i>
+                                                        Eliminar
+                                                    </button>
+                                                    <input type="hidden" name="id" value="<%=usu.getId_usuario()%>">
+                                                </form>
+                                                  <form name="editar" action="SvEditUsuarios" method="POST">
+                                                    <button type="submit" class="btn btn-primary btn-user btn-block " ; style= "background-color:blue; margin-left: 5px">
+                                                        <i class ="fas fa-pencil-alt"></i>
+                                                        Editar
+                                                    </button>
+                                                    <input type="hidden" name="id" value="<%=usu.getId_usuario()%>">
+                                                </form>
+                                            </td>
+                                                
+                                                
+                                                
                                         </tr>
-                                        
+                                        <% } %>
                                         
                                     </tbody>
                                     
-                                    <% } %>
+                                    
                                 </table>
                             </div>
                         </div>
