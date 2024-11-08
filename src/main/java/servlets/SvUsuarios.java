@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import logica.Controladora;
 import logica.Usuario;
 
@@ -34,6 +35,23 @@ public class SvUsuarios extends HttpServlet {
         
         
         List<Usuario> listaUsuario = control.listarUsuarios();
+        
+        System.out.println(" Hola estamos el servlets get");
+        
+        //Traemos la session de los jsp 
+        
+        HttpSession misesion = request.getSession();
+        
+        //Asignamos en esta sessión la variable lista de usuario 
+        misesion.setAttribute("listaUsuario", listaUsuario);
+        
+        for(Usuario usu : listaUsuario){ 
+        
+        System.out.println("nombre usuario: " + usu.getNombre_usuario() );}
+        
+        //Redirigimos a nuestro jsp 
+        
+        response.sendRedirect("verUsuarios.jsp");
         
  
         

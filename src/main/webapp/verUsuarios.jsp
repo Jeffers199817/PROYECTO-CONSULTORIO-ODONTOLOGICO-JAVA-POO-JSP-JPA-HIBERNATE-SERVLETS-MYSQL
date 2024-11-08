@@ -4,6 +4,8 @@
     Author     : JEFFERSON ALQUINGA
 --%>
 
+<%@page import="logica.Usuario"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
     
@@ -36,8 +38,7 @@
                                          
                                         </tr>
                                     </thead>
-                                    
-                                    <%    %>
+
                                     <tfoot>
                                         <tr>
                                             <th>Id Usuario</th>
@@ -45,16 +46,26 @@
                                             <th>Rol</th>
                                         </tr>
                                     </tfoot>
+                                    
+                                                                        
+                                    <%   List<Usuario> listaUsuario =(List)request.getSession().getAttribute("listaUsuario");
+                                    
+                                        for(Usuario usu: listaUsuario){
+                                    
+                                        
+                                    %>
                                     <tbody>
                                         <tr>
-                                            <td>1</td>
-                                            <td>Jefferson</td>
-                                            <td>Admin</td>
+                                            <td><%=usu.getId_usuario()%></td>
+                                            <td><%=usu.getNombre_usuario()%></td>
+                                            <td><%=usu.getRol()%></td>
                                            
                                         </tr>
                                         
                                         
                                     </tbody>
+                                    
+                                    <% } %>
                                 </table>
                             </div>
                         </div>
