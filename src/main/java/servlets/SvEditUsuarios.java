@@ -22,7 +22,7 @@ import logica.Usuario;
 @WebServlet(name = "SvEditUsuarios", urlPatterns = {"/SvEditUsuarios"})
 public class SvEditUsuarios extends HttpServlet {
     Controladora control = new Controladora();
-    Usuario usu;
+
      
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -41,7 +41,7 @@ public class SvEditUsuarios extends HttpServlet {
         
         int id = Integer.parseInt(request.getParameter("id"));
         
-        this.usu = control.traerUsuario(id);
+            Usuario usu = control.traerUsuario(id);
         
         //traer la session 
         HttpSession misesion = request.getSession();
@@ -65,6 +65,8 @@ public class SvEditUsuarios extends HttpServlet {
         String contrasenia = request.getParameter("contrasenia");
         String rol = request.getParameter("rol");
         
+        
+        Usuario usu = (Usuario)request.getSession().getAttribute("usu");
         
         control.editarUsuario(usu,nombreUsuario, contrasenia, rol);
         
