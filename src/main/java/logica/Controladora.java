@@ -4,6 +4,7 @@
  */
 package logica;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -67,6 +68,30 @@ public class Controladora {
         
         
        
+    }
+
+    public boolean comprobarIngreso(String usuario, String contrasenia) {
+
+        List<Usuario> listaUsuario = new ArrayList<Usuario>();
+        
+        boolean ingreso = false;
+        listaUsuario = controlPersis.listarUsuario();
+        
+        for(Usuario usu : listaUsuario){ 
+            
+            if(usu.getNombre_usuario().equals(usuario) && usu.getContrasenia().equals(contrasenia)){ 
+                
+                ingreso = true;
+                break;
+            }else{ 
+                
+                ingreso = false;
+            }
+           
+        }
+                
+                return ingreso;
+
     }
 
 
