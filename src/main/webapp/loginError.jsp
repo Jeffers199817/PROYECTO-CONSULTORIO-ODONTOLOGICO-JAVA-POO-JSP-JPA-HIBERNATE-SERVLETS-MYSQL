@@ -49,7 +49,7 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Inicie Session</h1>
                                     </div>
-                                    <p> Inicia session para ver está página.</p>
+                                    <p> Usuario o Contraseña incorrectos.</p>
                                   
                                         <a href="login.jsp" class="btn btn-primary btn-user btn-block" type="submit">
                                             Volver al Login
