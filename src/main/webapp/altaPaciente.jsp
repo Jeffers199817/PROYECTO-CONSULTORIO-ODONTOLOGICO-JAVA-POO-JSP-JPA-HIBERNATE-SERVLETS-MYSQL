@@ -54,6 +54,9 @@
             <div class="col-sm-6 mb-3">
                 <input type="text" class="form-control form-control-user" id="direccionResponsable" name="direccionResponsable" placeholder="direccion">
             </div>
+              <div class="col-sm-6 mb-3">
+            <input type="date" class="form-control form-control-user" id="fecha" name="fecha" placeholder="fecha" >
+        </div>
         </div>
     </div>
 
