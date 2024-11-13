@@ -5,8 +5,9 @@
 <%@include file="components/header.jsp"%>
 <%@include file ="components/bodyprimeraparte.jsp"%>
 
-
-<h1>hola bb<h1/>
+    <div> 
+                     <h1>Bienvenido al consultorio Odontólogico <%=request.getSession().getAttribute("usuario") %>. <h1/>
+                     </div>
 <img src="https://blogs.unitec.mx/hubfs/Imported_Blog_Media/tips-para-descubrir-si-ser-odontologo-es-tu-vocacion-1-Dec-17-2022-09-06-44-2938-PM.jpg" height="400px" width="400px" alt="alt">
 <%@include file="components/bodyfinal.jsp"%>
 

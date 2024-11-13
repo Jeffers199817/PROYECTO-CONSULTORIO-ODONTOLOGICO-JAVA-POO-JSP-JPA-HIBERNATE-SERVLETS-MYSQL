@@ -28,6 +28,8 @@
                     <i class="fas fa-tooth"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">Consultorio Odontólogico </div>
+                
+            
             </a>
 
             <!-- Divider -->
@@ -35,7 +37,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="index.jsp">
                     <i class="fas fa-solid fa-bars"></i>
                     <span>Menú</span></a>
             </li>
@@ -78,7 +80,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Acciones:</h6>
                         <a class="collapse-item" href="">Ver Pacientes</a>
-                        <a class="collapse-item" href="">Alta Pacientes</a>
+                        <a class="collapse-item" href="altaPaciente.jsp">Alta Pacientes</a>
                        
                     </div>
                 </div>
